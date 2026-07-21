@@ -8,22 +8,24 @@
   <body>
     <h1>Vue3</h1>
     <div id="app">
-      <div v-html="message">
+      <p>{{ message }}</p>
     </div>
-    <script>
-      const list = ['One', 'Two', 'Three']
-      const appdata = {
-        data() {
-          return {
-            message: `<ul>
-              <li>${list[0]}</li>
-              <li>${list[1]}</li>
-              <li>${list[2]}</li>
-            </ul>`
-            }
-          }
-        }
 
+    <script>
+    const appdata = {
+      data() {
+        return {
+          message: 'Hello Vue!',
+          count: 0
+        }
+      },
+      mounted() {
+        setInterval(() => {
+          this.count++
+          this.message = 'Count: ' + this.count
+        }, 1000)
+      }
+    }
       Vue.createApp(appdata).mount('#app')
     </script>
   </body>
