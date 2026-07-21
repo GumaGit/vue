@@ -8,10 +8,7 @@
   <body>
     <h1>Vue3</h1>
     <div id="app">
-      <p>{{ message }}</p>
-      <p>{{ count }}</p>
-      <p>{{ user.lastName }}</p>
-      <p>{{ colors[1] }}</p>
+      <div v-html="message">
     </div>
     <script>
       const appdata = {
